@@ -1,10 +1,12 @@
 import random
 
-for i in range(2, 4):
-    n = random.randint(1, 100)
-    with open(f"./test-problem/test{i}.in", "w") as f:
-        f.write(str(n))
+dir_name = "lego-tower"
 
-    with open(f"./test-problem/test{i}.out", "w") as f:
-        for j in range(n):
-            f.write("Hello world!\n")
+for i in range(1, 6):
+    a = random.randint(0, 30)
+    b = random.randint(0, 30)
+    with open(f"./{dir_name}/test{i}.in", "w") as f:
+        f.write(f"{a} {b}")
+
+    with open(f"./{dir_name}/test{i}.out", "w") as f:
+        f.write(f"{max(a, b) - min(a,b)} {min(a,b)}")
