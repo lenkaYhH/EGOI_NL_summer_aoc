@@ -1,19 +1,23 @@
 import random
 
-dir_name = "3n+1"
+dir_name = "plane-spotting"
 
 for i in range(1, 6):
     n = random.randint(1, 100)
+    a = random.randint(1, 50)
+    b = random.randint(a+1, 100)
+
+    airplanes = [random.randint(1, 1000) for _ in range(n)]
+
     with open(f"./{dir_name}/test{i}.in", "w") as f:
-        f.write(f"{n}")
+        f.write(f"{n} {a} {b}\n")
+        f.write(" ".join(list(map(str, airplanes))))
 
     with open(f"./{dir_name}/test{i}.out", "w") as f:
-        while n != 1:
-            f.write(str(int(n)) + " ")
+        cnt = 0
 
-            if n%2:
-                n = 3*n+1
-            else:
-                n/= 2
-        
-        f.write(str(int(n)))
+        for p in airplanes:
+            if a <= p < b:
+                cnt += 1
+                
+        f.write(str(int(cnt)))
