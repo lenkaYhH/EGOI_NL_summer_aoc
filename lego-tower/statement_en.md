@@ -37,6 +37,7 @@ Or,
 
 #### Sample 1 Explanation
 ![image](./sample1.png)
+
 Uil wants to make a tower with left side height 2 and right side height 3. The minimum blocks uil needs is 3, with one 1x1x1 block (in blue) and two 1x1x2 blocks (in yellow).
 
 ### Sample Input 2

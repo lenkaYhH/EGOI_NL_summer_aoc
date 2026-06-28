@@ -1,12 +1,19 @@
 import random
 
-dir_name = "lego-tower"
+dir_name = "3n+1"
 
 for i in range(1, 6):
-    a = random.randint(0, 30)
-    b = random.randint(0, 30)
+    n = random.randint(1, 100)
     with open(f"./{dir_name}/test{i}.in", "w") as f:
-        f.write(f"{a} {b}")
+        f.write(f"{n}")
 
     with open(f"./{dir_name}/test{i}.out", "w") as f:
-        f.write(f"{max(a, b) - min(a,b)} {min(a,b)}")
+        while n != 1:
+            f.write(str(int(n)) + " ")
+
+            if n%2:
+                n = 3*n+1
+            else:
+                n/= 2
+        
+        f.write(str(int(n)))
