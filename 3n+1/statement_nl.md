@@ -24,8 +24,6 @@ Print op één regel alle getallen die voorkomen terwijl je van `n` naar `1` gaa
 
 Vergeet niet om ook het oorspronkelijke getal aan het begin en `1` aan het einde!
 
-**Hint:** Bekijk de `while`-lus uit Hoofdstuk 4.
-
 ## Voorbeeld
 
 ### Voorbeeldinvoer 1
