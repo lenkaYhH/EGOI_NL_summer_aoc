@@ -1,6 +1,6 @@
 # Albert Heijn
 
-Uil has started working at the Albert Heijn, but the machine at the cashier is broken! Help Uil calculate the total cost for the `t` costumers, taking into account the discounts currently offered. 
+Uil has started working at the Albert Heijn, but the machine at the cashier is broken! Help Uil calculate the total cost for the `t` costumers, taking into account the current discounts. 
 
 **Discount Rules**:
 
