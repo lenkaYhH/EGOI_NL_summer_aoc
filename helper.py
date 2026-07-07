@@ -1,24 +1,73 @@
 import random
-from solution import solve
+import subprocess
+import os
 
-dir_name = "albert-heijn"
+# ==========================
+# Configuration
+# ==========================
 
-for i in range(1, 6):
-    t = random.randint(1, 100)
-    item = []
+direct = "dragons_peak_adapted"
 
-    # with open(f"./{dir_name}/test{i}.out", "w") as f2:
-        # continue
+# CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
+CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-    with open(f"./{dir_name}/test{i}.in", "w") as f:
-        f.write(f"{t}\n")
+NUM_TESTS = 5
 
-        for j in range(t): 
-            n = random.randint(1, 100)
-            items = [random.randint(1, 10) for _ in range(n)]
+# ==========================
+# Random testcase generator
+# ==========================
 
-            f.write(f"{n} {" ".join(list(map(str, items)))}\n")
+def generate_testcase():
+    """
+    Return the entire input as a string.
+    Modify this function for your own problem.
+    """
 
+    n = random.randint(1, 1000)
+    p = random.randint(1, 100)
+    q = random.randint(1, 100)
+    arr = []
 
-            with open(f"./{dir_name}/test{i}.out", "a") as f2:
-                f2.write(str(solve(items)) + "\n")
+    for i in range(n):
+        if i==0:
+            arr.append(random.randint(1, 50))
+        else: 
+            arr.append(random.randint(arr[-1], 10000-n+i))
+
+    lines = [
+        f"{n} {p} {q}",
+        " ".join(map(str, arr))
+    ]
+
+    return "\n".join(lines) + "\n"
+
+# ==========================
+# Main
+# ==========================
+
+for i in range(1, NUM_TESTS + 1):
+    input_data = generate_testcase()
+
+    input_filename = f"{direct}/input{i}.in"
+    output_filename = f"{direct}/output{i}.out"
+
+    # Save input
+    with open(input_filename, "w") as f:
+        f.write(input_data)
+
+    # Run solution
+    result = subprocess.run(
+        [CPP_EXECUTABLE],
+        input=input_data,
+        text=True,
+        capture_output=True,
+        check=True
+    )
+
+    # Save output
+    with open(output_filename, "w") as f:
+        f.write(result.stdout)
+
+    print(f"Generated {input_filename} and {output_filename}")
+
+print("Done!")
