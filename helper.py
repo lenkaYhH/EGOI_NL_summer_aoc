@@ -6,7 +6,7 @@ import os
 # Configuration
 # ==========================
 
-direct = "middelste_letters"
+direct = "boeken-kopen"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,11 +23,19 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    with open("scrap.txt", "r") as f:
-        words = f.readline().split(", ")
+    a = random.randint(1, 10000)
+    b = random.randint(1, 10000)
+    c = random.randint(1, 10000)
+
+    a_list = [random.randint(1, 10000) for _ in range(a)]
+    b_list = [random.randint(1, 10000) for _ in range(b)]
+    c_list = [random.randint(1, 10000) for _ in range(c)]
 
     lines = [
-        random.choice(words)
+        f"{a} {b} {c}",
+        " ".join(list(map(str, a_list))),
+        " ".join(list(map(str, b_list))),
+        " ".join(list(map(str, c_list)))
     ]
 
     return "\n".join(lines) + "\n"
