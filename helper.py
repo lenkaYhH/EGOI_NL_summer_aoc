@@ -6,7 +6,7 @@ import os
 # Configuration
 # ==========================
 
-direct = "boeken-kopen"
+direct = "human-pyramid"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,19 +23,10 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    a = random.randint(1, 10000)
-    b = random.randint(1, 10000)
-    c = random.randint(1, 10000)
-
-    a_list = [random.randint(1, 10000) for _ in range(a)]
-    b_list = [random.randint(1, 10000) for _ in range(b)]
-    c_list = [random.randint(1, 10000) for _ in range(c)]
+    n = random.randint(1, 100000)
 
     lines = [
-        f"{a} {b} {c}",
-        " ".join(list(map(str, a_list))),
-        " ".join(list(map(str, b_list))),
-        " ".join(list(map(str, c_list)))
+        f"{n}"
     ]
 
     return "\n".join(lines) + "\n"
