@@ -6,7 +6,7 @@ import os
 # Configuration
 # ==========================
 
-direct = "human-pyramid"
+direct = "cookie-bags"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,10 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 100000)
+    # n = random.randint(1, 100000)
+    r = random.randint(1, int(1e6))
+    b = random.randint(1, int(1e6))
 
     lines = [
-        f"{n}"
+        f"{r} {b}"
     ]
 
     return "\n".join(lines) + "\n"
