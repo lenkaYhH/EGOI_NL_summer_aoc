@@ -6,12 +6,12 @@ import os
 # Configuration
 # ==========================
 
-direct = "cookie-bags"
+direct = "hungry-caterpillar"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 5
+NUM_TESTS = 10
 
 # ==========================
 # Random testcase generator
@@ -23,12 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    # n = random.randint(1, 100000)
-    r = random.randint(1, int(1e6))
-    b = random.randint(1, int(1e6))
+    n = random.randint(1, 100000)
+    food = [random.randint(-9000, 10000) for _ in range(n)]
 
     lines = [
-        f"{r} {b}"
+        f"{n}",
+        " ".join(list(map(str, food)))
     ]
 
     return "\n".join(lines) + "\n"
