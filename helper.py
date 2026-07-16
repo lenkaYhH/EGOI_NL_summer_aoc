@@ -6,12 +6,12 @@ import os
 # Configuration
 # ==========================
 
-direct = "future-fifa"
+direct = "fizzbuzz"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 4
+NUM_TESTS = 5
 
 # ==========================
 # Random testcase generator
@@ -23,12 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    y = random.randint(1, 10000)
-    k = random.randint(1, 1000)
+    n = random.randint(1, 1000000)
+    x = random.randint(1, n//1000)
+    y = random.randint(1, n//100)
 
     lines = [
-        f"{y*k}",
-        f"{k}"
+        f"{n} {x} {y}"
     ]
 
     return "\n".join(lines) + "\n"
