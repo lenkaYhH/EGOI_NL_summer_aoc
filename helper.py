@@ -6,7 +6,7 @@ import os
 # Configuration
 # ==========================
 
-direct = "hungry-caterpillar"
+direct = "rooftop-swimmingpool"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,12 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 100000)
-    food = [random.randint(-9000, 10000) for _ in range(n)]
+    n = random.randint(1, 100)
+    h = [random.randint(1, 1000000) for _ in range(n)]
 
     lines = [
         f"{n}",
-        " ".join(list(map(str, food)))
+        " ".join(list(map(str, h)))
     ]
 
     return "\n".join(lines) + "\n"
