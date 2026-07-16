@@ -6,12 +6,12 @@ import os
 # Configuration
 # ==========================
 
-direct = "rooftop-swimmingpool"
+direct = "future-fifa"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 10
+NUM_TESTS = 4
 
 # ==========================
 # Random testcase generator
@@ -23,12 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 100)
-    h = [random.randint(1, 1000000) for _ in range(n)]
+    y = random.randint(1, 10000)
+    k = random.randint(1, 1000)
 
     lines = [
-        f"{n}",
-        " ".join(list(map(str, h)))
+        f"{y*k}",
+        f"{k}"
     ]
 
     return "\n".join(lines) + "\n"
