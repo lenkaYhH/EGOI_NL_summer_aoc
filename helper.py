@@ -23,9 +23,9 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 1000000)
-    x = random.randint(1, n//1000)
-    y = random.randint(1, n//100)
+    n = random.randint(1, 1000)
+    x = random.randint(1, n//10)
+    y = random.randint(1, n)
 
     lines = [
         f"{n} {x} {y}"

@@ -27,6 +27,7 @@ signed main() {
         } else {
             cout << i << " ";
         }
+        cout << "\n";
     }
 
 }
