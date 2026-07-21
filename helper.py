@@ -6,12 +6,12 @@ import os
 # Configuration
 # ==========================
 
-direct = "fizzbuzz"
+direct = "weerstations"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 5
+NUM_TESTS = 2
 
 # ==========================
 # Random testcase generator
@@ -24,12 +24,17 @@ def generate_testcase():
     """
 
     n = random.randint(1, 1000)
-    x = random.randint(1, n//10)
-    y = random.randint(1, n)
+    temps = [random.randint(1, 1000) for _ in range(n)]
+
+    offset = n - (sum(temps) % n)
+    temps[random.randint(0, n-1)] += offset
 
     lines = [
-        f"{n} {x} {y}"
+        f"{n}",
+        f"{' '.join(list(map(str, temps)))}"
     ]
+    
+    print(f"avrg: {sum(temps)/n}")
 
     return "\n".join(lines) + "\n"
 
