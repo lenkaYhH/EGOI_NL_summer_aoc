@@ -27,4 +27,4 @@ t1 t2 ... tn
 ```
 2
 ```
-**Uitleg:** de gemiddelde temperatuur is (1.1+2+2.9)/3 = 2
+**Uitleg:** de gemiddelde temperatuur is (1+2+3)/3 = 2
