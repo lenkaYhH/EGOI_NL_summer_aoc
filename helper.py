@@ -6,7 +6,7 @@ import os
 # Configuration
 # ==========================
 
-direct = "stenen"
+direct = "watermelons"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,12 +23,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 1000)
-    stones = [random.choice(["R", "B", "G"]) for _ in range(n)]
+    n = random.randint(1, 10000)
+    weights = [random.randint(1, 1000000000) for _ in range(n)]
 
     lines = [
         f"{n}",
-        f"{''.join(stones)}"
+        f"{' '.join(list(map(str, weights)))}"
     ]
 
     return "\n".join(lines) + "\n"
