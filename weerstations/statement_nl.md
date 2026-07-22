@@ -11,7 +11,7 @@ t1 t2 ... tn
 ```
 
 Één regel met `n`, het aantal weerstations
-Één regel met n getallen (die mag een decimal zijn!), die zijn de temperaturen gemeten bij de weerstations. 
+Één regel met n getallen, die zijn de temperaturen gemeten bij de weerstations. 
 
 ## Uitvoer
 Één regel met een geheel getal: de gemiddelde temperatuur.
