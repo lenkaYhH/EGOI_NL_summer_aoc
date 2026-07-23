@@ -1,12 +1,13 @@
 import random
 import subprocess
 import os
+import string
 
 # ==========================
 # Configuration
 # ==========================
 
-direct = "watermelons"
+direct = "making-dictionary"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -23,12 +24,13 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 10000)
-    weights = [random.randint(1, 1000000000) for _ in range(n)]
+    n = random.randint(1, 100)
+    word1 = ''.join(random.choices(string.ascii_letters, k=n))
+    word2 = ''.join(random.choices(string.ascii_letters, k=n))
 
     lines = [
-        f"{n}",
-        f"{' '.join(list(map(str, weights)))}"
+        f"{word1}",
+        f"{word2}"
     ]
 
     return "\n".join(lines) + "\n"
