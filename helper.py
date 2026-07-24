@@ -7,7 +7,7 @@ import string
 # Configuration
 # ==========================
 
-direct = "making-dictionary"
+direct = "big-steps-small-step"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -24,13 +24,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 100)
-    word1 = ''.join(random.choices(string.ascii_letters, k=n))
-    word2 = ''.join(random.choices(string.ascii_letters, k=n))
+    # n = random.randint(1, 100)
+    x = random.randint(1, 1000000)
+    y = random.randint(1, 1000000)
 
     lines = [
-        f"{word1}",
-        f"{word2}"
+        f"{x} {y}"
     ]
 
     return "\n".join(lines) + "\n"
