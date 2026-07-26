@@ -7,7 +7,7 @@ import string
 # Configuration
 # ==========================
 
-direct = "big-steps-small-step"
+direct = "trash"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -24,12 +24,13 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    # n = random.randint(1, 100)
-    x = random.randint(1, 1000000)
-    y = random.randint(1, 1000000)
+    n = random.randint(1, 500)
+    m = random.randint(1, 1000000000)
+    trash = [random.randint(1, m) for _ in range(n)]
 
     lines = [
-        f"{x} {y}"
+        f"{n} {m}",
+        " ".join(list(map(str, trash)))
     ]
 
     return "\n".join(lines) + "\n"
