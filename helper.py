@@ -2,17 +2,12 @@ import random
 import subprocess
 import os
 import string
-
-# ==========================
-# Configuration
-# ==========================
-
-direct = "finding-forks"
+direct = "syntax-error"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 3
+NUM_TESTS = 2
 
 # ==========================
 # Random testcase generator
@@ -24,12 +19,13 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 1000)
-    forks = [random.randint(1, 1000000000) for _ in range(n)]
+    n = random.randint(1, 30)
+    line = [random.choice(["(", ")"]) for _ in range(n)]
 
     lines = [
-        f"{n}",
-        " ".join(list(map(str, forks)))
+        # f"{n}",
+        # " ".join(list(map(str, forks)))
+        "".join(line)
     ]
 
     return "\n".join(lines) + "\n"
