@@ -7,12 +7,12 @@ import string
 # Configuration
 # ==========================
 
-direct = "trash"
+direct = "finding-forks"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 5
+NUM_TESTS = 3
 
 # ==========================
 # Random testcase generator
@@ -24,13 +24,12 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 500)
-    m = random.randint(1, 1000000000)
-    trash = [random.randint(1, m) for _ in range(n)]
+    n = random.randint(1, 1000)
+    forks = [random.randint(1, 1000000000) for _ in range(n)]
 
     lines = [
-        f"{n} {m}",
-        " ".join(list(map(str, trash)))
+        f"{n}",
+        " ".join(list(map(str, forks)))
     ]
 
     return "\n".join(lines) + "\n"
