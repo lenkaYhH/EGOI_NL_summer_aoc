@@ -2,7 +2,8 @@ import random
 import subprocess
 import os
 import string
-direct = "99-problems"
+from itertools import permutations
+direct = "Odysseus"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
@@ -19,12 +20,15 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 10000)
-    # line = [random.choice(["(", ")"]) for _ in range(n)]
+    n = random.randint(2, int(10**random.randint(1, 5)))
+    arr = list(range(1, n))
+    random.shuffle(arr)
+
+
 
     lines = [
-        f"{n}"
-        # " ".join(list(map(str, forks)))
+        f"{n}",
+        " ".join(map(str, arr))
         # "".join(line)
     ]
 
