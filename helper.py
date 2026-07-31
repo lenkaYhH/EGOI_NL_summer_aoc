@@ -2,12 +2,12 @@ import random
 import subprocess
 import os
 import string
-direct = "syntax-error"
+direct = "99-problems"
 
 # CPP_EXECUTABLE = "./dragons_peak_adapted/solution"      # Linux/macOS
 CPP_EXECUTABLE = f"./{direct}/solution.exe"  # Windows
 
-NUM_TESTS = 2
+NUM_TESTS = 5
 
 # ==========================
 # Random testcase generator
@@ -19,13 +19,13 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, 30)
-    line = [random.choice(["(", ")"]) for _ in range(n)]
+    n = random.randint(1, 10000)
+    # line = [random.choice(["(", ")"]) for _ in range(n)]
 
     lines = [
-        # f"{n}",
+        f"{n}"
         # " ".join(list(map(str, forks)))
-        "".join(line)
+        # "".join(line)
     ]
 
     return "\n".join(lines) + "\n"
