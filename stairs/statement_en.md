@@ -1,6 +1,6 @@
 # Stairs
 
-Uil is hiking up a hill via a footpath with stairs. There are `n` stairs in the footpath and each stair has its own height (step number `i` has height of `h_i`). Uil notices something interesting: the stairs is supposed to go up the hill, but sometimes one step is strictly lower than the one before! Uil calls these lower stair-step "illogical" because these steps do not actually contribute to Uil walking up. 
+Uil is hiking up a hill via a footpath with stairs. There are `n` stairs in the footpath and each stair has its own height (step number `i` has height of `h_i`). Uil notices something interesting: the stairs is supposed to go up the hill, but sometimes one step is strictly lower than the one before! Uil calls these lower stair-step "illogical" because these steps is undoing the "climbing up".
 
 Given the height of the stairs, output how many illogical steps there are.
 

@@ -1,6 +1,6 @@
 # Trappen
 
-Uil wandelt een heuvel op via een voetpad met trappen. Er zijn `n` treden in het voetpad en elke trede heeft zijn eigen hoogte (trede nummer `i` heeft hoogte `h_i`). Uil merkt iets interessants op: de trappen zouden omhoog moeten gaan, maar soms is een trede strikt lager dan de trede ervoor! Uil noemt deze lagere treden "onlogisch", omdat deze treden niet daadwerkelijk bijdragen aan het omhooglopen.
+Uil wandelt een heuvel op via een voetpad met trappen. Er zijn `n` treden in het voetpad en elke trede heeft zijn eigen hoogte (trede nummer `i` heeft hoogte `h_i`). Uil merkt iets interessants op: de trappen zouden omhoog moeten gaan, maar soms is een trede strikt lager dan de trede ervoor! Uil noemt deze lagere treden "onlogisch", omdat je daarmee eigenlijk weer een stukje naar beneden gaat.
 
 Gegeven de hoogtes van de treden, bepaal hoeveel onlogische treden er zijn.
 
