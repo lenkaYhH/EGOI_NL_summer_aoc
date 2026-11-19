@@ -3,7 +3,7 @@ import subprocess
 import os
 import string
 from itertools import permutations
-direct = "contest-nov2026/lights-on-lights-off"
+direct = "contest-nov2026/lollipops"
 
 CPP_EXECUTABLE = f"./{direct}/solution.exe" 
 
@@ -20,15 +20,16 @@ def generate_testcase():
     """
 
     n = random.randint(1, int(10**random.randint(1, 5)))
-    # arr = [random.randint(1, int(10** random.randint(1, 9))) for _ in range(n)]
+    arr = [random.randint(1, int(10** random.randint(1, 3))) for _ in range(2*n)]
     # random.shuffle(arr)
-    state = random.choice(['aan', 'uit'])
+    # state = random.choice(['aan', 'uit'])
+    new_arr = list()
+    for i in range(n):
+        new_arr.append(" ".join(map(str, arr[2*i:2*(i+1)])))
 
     lines = [
         f"{n}",
-        state
-        # " ".join(map(str, arr))
-        # "".join(line)
+        "\n".join(new_arr)
     ]
 
     return "\n".join(lines) + "\n"
