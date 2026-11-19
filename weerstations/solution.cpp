@@ -9,6 +9,6 @@ int main() {
         int ti; cin >> ti;
         val += ti;
     }
-
+    // cout << val << "\n";
     cout <<  val / n << "\n";
 }
