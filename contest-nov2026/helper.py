@@ -3,7 +3,7 @@ import subprocess
 import os
 import string
 from itertools import permutations
-direct = "contest-nov2026/chairs"
+direct = "contest-nov2026/buying-cookies"
 
 CPP_EXECUTABLE = f"./{direct}/solution.exe" 
 
