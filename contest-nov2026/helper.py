@@ -3,7 +3,7 @@ import subprocess
 import os
 import string
 from itertools import permutations
-direct = "contest-nov2026/grading-exams"
+direct = "contest-nov2026/pinball-machine"
 
 CPP_EXECUTABLE = f"./{direct}/solution.exe" 
 
@@ -12,6 +12,13 @@ NUM_TESTS = 5
 # ==========================
 # Random testcase generator
 # ==========================
+def gen_random_string():
+    s_length = random.randint(1, 10)
+    s = ""
+    for _ in range(s_length):
+        s += random.choice(string.ascii_lowercase)
+
+    return s
 
 def generate_testcase():
     """
@@ -19,15 +26,28 @@ def generate_testcase():
     Modify this function for your own problem.
     """
 
-    n = random.randint(1, int(10**random.randint(1, 6)))
+    n = random.randint(1, int(10**random.randint(1, 2)))
+
+    names = [gen_random_string() for _ in range(n)]
+
     # k = random.randint(1, int(10**random.randint(1, 7)))
     arr = [random.randint(1, int(10** random.randint(1, 2))) for _ in range(n)]
+
+    while len(arr) != len(set(arr)):
+        arr = [random.randint(1, int(10** random.randint(1, 6))) for _ in range(n)]
+
     # random.shuffle(arr)
     # state = random.choice(['aan', 'uit'])
 
+    new_arr = list()
+    for item in zip(names, arr):
+        new_arr.append(f"{item[0]} {str(item[1])}")
+    
+
     lines = [
         f"{n}",
-        " ".join(map(str, arr))
+        # " ".join(map(str, arr))
+        "\n".join(new_arr)
     ]
 
     return "\n".join(lines) + "\n"
