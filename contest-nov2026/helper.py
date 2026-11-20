@@ -3,7 +3,7 @@ import subprocess
 import os
 import string
 from itertools import permutations
-direct = "contest-nov2026/pinball-machine"
+direct = "contest-nov2026/giraffe-sweaters"
 
 CPP_EXECUTABLE = f"./{direct}/solution.exe" 
 
@@ -21,33 +21,26 @@ def gen_random_string():
     return s
 
 def generate_testcase():
-    """
-    Return the entire input as a string.
-    Modify this function for your own problem.
-    """
 
-    n = random.randint(1, int(10**random.randint(1, 2)))
+    n = random.randint(1, int(10**random.randint(1, 5)))
 
-    names = [gen_random_string() for _ in range(n)]
+    # names = [gen_random_string() for _ in range(n)]
 
-    # k = random.randint(1, int(10**random.randint(1, 7)))
-    arr = [random.randint(1, int(10** random.randint(1, 2))) for _ in range(n)]
-
-    while len(arr) != len(set(arr)):
-        arr = [random.randint(1, int(10** random.randint(1, 6))) for _ in range(n)]
+    k = random.randint(1, int(10**random.randint(2, 4)))
+    arr = [random.randint(1, int(10** random.randint(1, 3))) for _ in range(n)]
 
     # random.shuffle(arr)
     # state = random.choice(['aan', 'uit'])
 
-    new_arr = list()
-    for item in zip(names, arr):
-        new_arr.append(f"{item[0]} {str(item[1])}")
+    # new_arr = list()
+    # for item in zip(names, arr):
+    #     new_arr.append(f"{item[0]} {str(item[1])}")
     
 
     lines = [
-        f"{n}",
-        # " ".join(map(str, arr))
-        "\n".join(new_arr)
+        f"{n} {k}",
+        " ".join(map(str, arr))
+        # " ".join(arr)
     ]
 
     return "\n".join(lines) + "\n"
